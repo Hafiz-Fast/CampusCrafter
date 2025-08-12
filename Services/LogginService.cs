@@ -35,7 +35,7 @@ namespace Student_Freelance_Backend.Services
                 return new LogginResult
                 {
                     Success = false,
-                    message = "Password must be at least 8 characters long, contain one uppercase, one lowercase, and one number."
+                    message = "Password must be at least 8 characters long, contain one uppercase, one lowercase, and one number"
                 };
             }
 

@@ -11,6 +11,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ILogginService, LogginService>();
 builder.Services.AddScoped<ILogginRepo, LogginRepo>();
+builder.Services.AddScoped<ISigninService, SigninService>();
+builder.Services.AddScoped<ISigninRepo, SigninRepo>();
 
 
 var app = builder.Build();
