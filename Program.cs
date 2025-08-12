@@ -11,8 +11,12 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<ILogginService, LogginService>();
 builder.Services.AddScoped<ILogginRepo, LogginRepo>();
+
 builder.Services.AddScoped<ISigninService, SigninService>();
 builder.Services.AddScoped<ISigninRepo, SigninRepo>();
+
+builder.Services.AddScoped<IFreelancerService, FreelancerService>();
+builder.Services.AddScoped<IFreelancerRepo, FreelancerRepo>();
 
 
 var app = builder.Build();

@@ -42,10 +42,12 @@ namespace Student_Freelance_Backend.Repositories
 
                 if(result.userId == -1)
                 {
+                    result.flag = false;
                     result.Message = "Error occurred while inserting in Database";
                 }
                 else
                 {
+                    result.flag = true;
                     result.Message = "Signin Successfully!";
                 }
 

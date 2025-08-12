@@ -39,6 +39,15 @@ namespace Student_Freelance_Backend.Services
                 };
             }
 
+            if(signin.age <= 0 ||  signin.age > 100)
+            {
+                return new SigninResult
+                {
+                    flag = false,
+                    Message = "Invalid Age"
+                };
+            }
+
             return await _repo.UserSignin(signin);
         }
     }
