@@ -22,5 +22,13 @@ namespace Student_Freelance_Backend.Controllers
 
             return Ok(result);
         }
+
+        [HttpPost("AddEducation")]
+        public async Task<IActionResult> AddEducation(Education education)
+        {
+            var result = await _service.AddEducation(education);
+
+            return Ok(result);
+        }
     }
 }

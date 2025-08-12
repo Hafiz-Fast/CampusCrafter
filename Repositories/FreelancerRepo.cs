@@ -30,7 +30,35 @@ namespace Student_Freelance_Backend.Repositories
                 await conn.OpenAsync();
                 int rowsAffected = await cmd.ExecuteNonQueryAsync();
 
-                if(rowsAffected > 0)
+                if (rowsAffected > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+
+        public async Task<bool> AddEducation(Education education)
+        {
+            using (SqlConnection conn = new SqlConnection(_config.GetConnectionString("DefaultConnection")))
+            using (SqlCommand cmd = new SqlCommand("AddEducation", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@freelancerId", education.freelancerId);
+                cmd.Parameters.AddWithValue("@institute", education.institute);
+                cmd.Parameters.AddWithValue("@degree", education.degree);
+                cmd.Parameters.AddWithValue("@program", education.program);
+                cmd.Parameters.Add("@startDate", SqlDbType.Date).Value = education.StartDate.Date;
+                cmd.Parameters.Add("@endDate", SqlDbType.Date).Value = education.EndDate.Date;
+
+                await conn.OpenAsync();
+                int rowsAffected = await cmd.ExecuteNonQueryAsync();
+
+                if (rowsAffected > 0)
                 {
                     return true;
                 }

@@ -36,5 +36,10 @@ namespace Student_Freelance_Backend.Services
 
             return await _repo.AddFreelancer(freelancer);
         }
+
+        public async Task<bool> AddEducation(Education education)
+        {
+            return await _repo.AddEducation(education);
+        }
     }
 }
