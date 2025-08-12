@@ -1,0 +1,6 @@
+@Student_Freelance_Backend_HostAddress = http://localhost:5144
+
+GET {{Student_Freelance_Backend_HostAddress}}/
+Accept: application/json
+
+###
