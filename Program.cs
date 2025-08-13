@@ -18,6 +18,9 @@ builder.Services.AddScoped<ISigninRepo, SigninRepo>();
 builder.Services.AddScoped<IFreelancerService, FreelancerService>();
 builder.Services.AddScoped<IFreelancerRepo, FreelancerRepo>();
 
+builder.Services.AddScoped<IClientService, ClientService>();
+builder.Services.AddScoped<IClientRepo, ClientRepo>();
+
 
 var app = builder.Build();
 
